@@ -44,7 +44,7 @@ class ProductModel extends Product {
   }
 
   @override
-  //you can override a operator with Dart!
+  //you can override a operator in Dart!
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
