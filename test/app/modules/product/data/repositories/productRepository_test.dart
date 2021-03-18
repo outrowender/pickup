@@ -1,15 +1,15 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:pickup/app/modules/product/data/datasources/productDatasource.dart';
-import 'package:pickup/app/modules/product/data/models/productModel.dart';
-import 'package:pickup/app/modules/product/data/repositories/productRepositoryImpl.dart';
-import 'package:pickup/app/modules/product/domain/errors/errors.dart';
+import 'package:pickup/app/modules/product/data/datasources/IProductDatasource.dart';
+import 'package:pickup/app/modules/product/data/models/ProductModel.dart';
+import 'package:pickup/app/modules/product/data/repositories/ProductRepository.dart';
+import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
 
-class ProductDatasourceMock extends Mock implements ProductDatasource {}
+class ProductDatasourceMock extends Mock implements IProductDatasource {}
 
 main() {
   final datasource = ProductDatasourceMock();
-  final repository = ProductRepositoryImpl(datasource);
+  final repository = ProductRepository(datasource);
   test('Should return a product list', () async {
     when(() => datasource.getProducts())
         .thenAnswer((_) async => <ProductModel>[]);

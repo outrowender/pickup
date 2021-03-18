@@ -1,5 +1,5 @@
 import 'package:faker/faker.dart';
-import 'package:pickup/app/modules/product/data/models/productModel.dart';
+import 'package:pickup/app/modules/product/data/models/ProductModel.dart';
 
 class ProductFactory {
   final faker = new Faker();

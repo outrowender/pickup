@@ -1,17 +1,17 @@
-import 'package:pickup/app/modules/product/domain/entities/product.dart';
-import 'package:pickup/app/modules/product/domain/errors/errors.dart';
-import 'package:pickup/types/either.dart';
+import 'package:pickup/app/modules/product/domain/entities/Product.dart';
+import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
+import 'package:pickup/app/modules/product/domain/usecases/saveProducts/SaveProducts.dart';
+import 'package:pickup/types/Either.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:pickup/app/modules/product/domain/repositories/productRepository.dart';
-import 'package:pickup/app/modules/product/domain/usecases/saveProducts.dart';
+import 'package:pickup/app/modules/product/domain/repositories/IProductRepository.dart';
 
-class ProductRepositoryMock extends Mock implements ProductRepository {}
+class ProductRepositoryMock extends Mock implements IProductRepository {}
 
 // TODO: improve testing with better mocks
 main() {
   final repository = ProductRepositoryMock();
-  final usecase = SaveProductImpl(repository);
+  final usecase = SaveProduct(repository);
 
   test('Should save a list of products', () async {
     var products = <Product>[

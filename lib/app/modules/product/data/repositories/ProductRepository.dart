@@ -1,12 +1,12 @@
-import 'package:pickup/app/modules/product/data/datasources/productDatasource.dart';
-import 'package:pickup/app/modules/product/domain/errors/errors.dart';
-import 'package:pickup/app/modules/product/domain/entities/product.dart';
-import 'package:pickup/app/modules/product/domain/repositories/productRepository.dart';
-import 'package:pickup/types/either.dart';
+import 'package:pickup/app/modules/product/data/datasources/IProductDatasource.dart';
+import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
+import 'package:pickup/app/modules/product/domain/entities/Product.dart';
+import 'package:pickup/app/modules/product/domain/repositories/IProductRepository.dart';
+import 'package:pickup/types/Either.dart';
 
-class ProductRepositoryImpl implements ProductRepository {
-  late final ProductDatasource datasource;
-  ProductRepositoryImpl(this.datasource);
+class ProductRepository implements IProductRepository {
+  late final IProductDatasource datasource;
+  ProductRepository(this.datasource);
 
   @override
   Future<Either<ListProductsFailure, List<Product>>> list() async {

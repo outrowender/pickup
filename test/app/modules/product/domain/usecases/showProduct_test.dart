@@ -1,15 +1,15 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pickup/app/modules/product/domain/entities/product.dart';
-import 'package:pickup/app/modules/product/domain/errors/errors.dart';
-import 'package:pickup/types/either.dart';
+import 'package:pickup/app/modules/product/domain/entities/Product.dart';
+import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
+import 'package:pickup/types/Either.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:pickup/app/modules/product/domain/repositories/productRepository.dart';
-import 'package:pickup/app/modules/product/domain/usecases/showProduct.dart';
+import 'package:pickup/app/modules/product/domain/repositories/IProductRepository.dart';
+import 'package:pickup/app/modules/product/domain/usecases/showProduct/ShowProduct.dart';
 
-class ProductRepositoryMock extends Mock implements ProductRepository {}
+class ProductRepositoryMock extends Mock implements IProductRepository {}
 
 final repository = ProductRepositoryMock();
-final usecase = ShowProductImpl(repository);
+final usecase = ShowProduct(repository);
 main() {
   test('Should return a product when id is valid', () async {
     when(() => repository.show(1)).thenAnswer((_) async => Right(

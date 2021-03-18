@@ -1,9 +1,9 @@
-import 'package:pickup/app/modules/product/data/datasources/productDatasource.dart';
-import 'package:pickup/app/modules/product/data/models/productModel.dart';
+import 'package:pickup/app/modules/product/data/datasources/IProductDatasource.dart';
+import 'package:pickup/app/modules/product/data/models/ProductModel.dart';
 import 'package:dio/dio.dart';
-import 'package:pickup/app/modules/product/domain/errors/errors.dart';
+import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
 
-class WebApiDatasource implements ProductDatasource {
+class WebApiDatasource implements IProductDatasource {
   late final Dio dio;
   WebApiDatasource(this.dio);
 

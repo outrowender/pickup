@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:pickup/app/modules/product/domain/entities/product.dart';
+import 'package:pickup/app/modules/product/domain/entities/Product.dart';
 
 class ProductModel extends Product {
   late int id;
