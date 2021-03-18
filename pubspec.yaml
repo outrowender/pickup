@@ -31,11 +31,14 @@ dependencies:
   mocktail: ^0.1.0
   dio: ^4.0.0-prev1
   faker: ^2.0.0-rc.2
+  flutter_modular: ^3.0.1
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
+  flutter_modular_test: ^1.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
