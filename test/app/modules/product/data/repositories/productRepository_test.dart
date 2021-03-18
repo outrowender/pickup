@@ -25,7 +25,6 @@ main() {
 
     final result = await repository.list();
 
-    //TODO: fix all return in these tests
-    expect(result, throwsA(isInstanceOf<ProductDatasourceFailure>()));
+    expect(result.isLeft, true);
   });
 }
