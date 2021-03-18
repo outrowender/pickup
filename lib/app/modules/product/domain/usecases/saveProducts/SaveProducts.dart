@@ -4,10 +4,10 @@ import 'package:pickup/app/modules/product/domain/entities/Product.dart';
 import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
 import 'ISaveProducts.dart';
 
-class SaveProduct implements ISaveProduct {
+class SaveProducts implements ISaveProducts {
   late final IProductRepository repository;
 
-  SaveProduct(this.repository);
+  SaveProducts(this.repository);
 
   @override
   Future<Either<SaveProductsFailure, bool>> call(List<Product> products) async {

@@ -11,7 +11,7 @@ class ProductRepositoryMock extends Mock implements IProductRepository {}
 // TODO: improve testing with better mocks
 main() {
   final repository = ProductRepositoryMock();
-  final usecase = SaveProduct(repository);
+  final usecase = SaveProducts(repository);
 
   test('Should save a list of products', () async {
     var products = <Product>[
