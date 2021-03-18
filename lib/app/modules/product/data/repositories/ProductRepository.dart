@@ -19,14 +19,22 @@ class ProductRepository implements IProductRepository {
   }
 
   @override
-  Future<Either<SaveProductsFailure, bool>> save(List<Product> products) {
-    // TODO: implement save
-    throw UnimplementedError();
+  Future<Either<SaveProductsFailure, bool>> save(List<Product> products) async {
+    try {
+      final result = await datasource.saveProducts(products);
+      return Right(result);
+    } catch (e) {
+      return Left(SaveProductsFailure());
+    }
   }
 
   @override
-  Future<Either<ShowProductFailure, Product>> show(int id) {
-    // TODO: implement show
-    throw UnimplementedError();
+  Future<Either<ShowProductFailure, Product>> show(int id) async {
+    try {
+      final result = await datasource.getProduct(id);
+      return Right(result);
+    } catch (e) {
+      return Left(ShowProductFailure());
+    }
   }
 }

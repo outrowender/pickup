@@ -1,5 +1,4 @@
 import 'package:pickup/app/modules/product/data/factories/ProductFactory.dart';
-import 'package:pickup/app/modules/product/domain/entities/Product.dart';
 import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
 import 'package:pickup/app/modules/product/domain/usecases/saveProducts/SaveProducts.dart';
 import 'package:pickup/types/Either.dart';
