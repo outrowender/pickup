@@ -1,3 +1,4 @@
+import 'package:pickup/app/modules/product/data/factories/ProductFactory.dart';
 import 'package:pickup/app/modules/product/domain/entities/Product.dart';
 import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
 import 'package:pickup/app/modules/product/domain/usecases/saveProducts/SaveProducts.dart';
@@ -12,12 +13,10 @@ class ProductRepositoryMock extends Mock implements IProductRepository {}
 main() {
   final repository = ProductRepositoryMock();
   final usecase = SaveProducts(repository);
+  final productFactory = ProductFactory();
 
   test('Should save a list of products', () async {
-    var products = <Product>[
-      Product(id: 12, name: 'name', ean: 'ean', sku: 'sku'),
-      Product(id: 13, name: 'name', ean: 'ean', sku: 'sku'),
-    ];
+    var products = productFactory.createList(2);
 
     when(() => repository.save(products)).thenAnswer((_) async => Right(true));
 
