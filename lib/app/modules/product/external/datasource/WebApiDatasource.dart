@@ -3,6 +3,7 @@ import 'package:pickup/app/modules/product/data/models/ProductModel.dart';
 import 'package:dio/dio.dart';
 import 'package:pickup/app/modules/product/domain/entities/Product.dart';
 import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
+import 'package:pickup/config/environment.dart';
 
 class WebApiDatasource implements IProductDatasource {
   late final Dio dio;
@@ -12,7 +13,7 @@ class WebApiDatasource implements IProductDatasource {
   Future<ProductModel> getProduct(int id) async {
     if (id < 1) throw ProductDatasourceFailure(); //TODO: some nice validators
 
-    final response = await dio.get('products/$id');
+    final response = await dio.get('$host/products/$id');//TODO: convert dio to a service
 
     if (response.statusCode == 200) {
       final data = (response.data as ProductModel);
@@ -24,11 +25,14 @@ class WebApiDatasource implements IProductDatasource {
 
   @override
   Future<List<ProductModel>> getProducts() async {
-    final response = await dio.get('products');
+    final response = await dio.get('$host/products');
 
     if (response.statusCode == 200) {
-      final data = (response.data as List<ProductModel>);
-      return data.toList();
+      final data = (response.data as List);
+      final products = data.map((e) => 
+        ProductModel.fromMap(e)
+      );
+      return products.toList();
     } else {
       throw ProductDatasourceFailure();
     }
@@ -36,7 +40,7 @@ class WebApiDatasource implements IProductDatasource {
 
   @override
   Future<bool> saveProducts(List<Product> products) async {
-    final response = await dio.post('products', data: products);
+    final response = await dio.post('$host/products', data: products);
 
     if (response.statusCode == 200) {
       final data = (response.data as bool);

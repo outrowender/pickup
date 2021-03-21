@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
@@ -15,7 +17,7 @@ main() {
     
     when(() => dio.get('products')).thenAnswer(
       (_) async => Response(
-        data: productFactory.createList(10),
+        data: json.encode(productFactory.createList(10)),
         statusCode: 200,
         requestOptions: RequestOptions(path: 'products'),
       ),

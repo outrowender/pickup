@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pickup/styles/widgets/button/LargeButton.dart';
 
@@ -49,7 +50,9 @@ class _LoginPageState extends State<LoginPage> {
                 child: LargeButton(
                   text: 'Login',
                   backgroundColor: Colors.black,
-                  onPressed: () => {},
+                  onPressed: () => {
+                     Modular.to.navigate('/products')
+                  },
                 ),
               ),
             )

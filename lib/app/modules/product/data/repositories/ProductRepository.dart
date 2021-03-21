@@ -14,6 +14,7 @@ class ProductRepository implements IProductRepository {
       final result = await datasource.getProducts();
       return Right(result);
     } catch (e) {
+      print(e);
       return Left(ProductDatasourceFailure());
     }
   }
@@ -24,6 +25,7 @@ class ProductRepository implements IProductRepository {
       final result = await datasource.saveProducts(products);
       return Right(result);
     } catch (e) {
+      print(e);
       return Left(SaveProductsFailure());
     }
   }
@@ -34,6 +36,7 @@ class ProductRepository implements IProductRepository {
       final result = await datasource.getProduct(id);
       return Right(result);
     } catch (e) {
+      print(e);
       return Left(ShowProductFailure());
     }
   }
