@@ -1,0 +1,28 @@
+{
+    "products":[
+        {
+            "id":1,
+            "name":"sabonete",
+            "ean":"eeeaaannn",
+            "sku":"ssskkkuuu"
+        },
+        {
+            "id":2,
+            "name":"caminhao",
+            "ean":"eeeaaannn",
+            "sku":"ssskkkuuu"
+        },
+        {
+            "id":3,
+            "name":"motorista",
+            "ean":"eeeaaannn",
+            "sku":"ssskkkuuu"
+        },
+        {
+            "id":4,
+            "name":"roda",
+            "ean":"eeeaaannn",
+            "sku":"ssskkkuuu"
+        }
+    ]
+}
