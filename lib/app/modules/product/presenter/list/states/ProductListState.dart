@@ -2,15 +2,15 @@ import 'package:pickup/app/modules/product/domain/entities/Product.dart';
 
 abstract class ProductListState {}
 
-class ListSucces implements ProductListState {
+class ListSuccessState implements ProductListState {
   late final List<Product> list;
-  ListSucces({
+  ListSuccessState({
     required this.list,
   });
 }
 
-class ListError implements ProductListState {}
+class ListErrorState implements ProductListState {}
 
-class ListLoading implements ProductListState {}
+class ListLoadingState implements ProductListState {}
 
-class ListStart implements ProductListState {}
+class ListStartState implements ProductListState {}

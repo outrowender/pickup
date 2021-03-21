@@ -5,7 +5,7 @@ import 'package:pickup/app/modules/product/domain/repositories/IProductRepositor
 import 'IListAllProducts.dart';
 
 
-class ListAllProducts implements IListAllProducts {
+class ListAllProducts implements IListAllProducts { //TODO: add "usecase" word in this name
   late final IProductRepository repository;
 
   ListAllProducts(this.repository);
