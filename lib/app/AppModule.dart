@@ -3,6 +3,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pickup/app/modules/product/data/repositories/ProductRepository.dart';
 import 'package:pickup/app/modules/product/domain/usecases/listProducts/ListAllProducts.dart';
 import 'package:pickup/app/modules/product/external/datasource/WebApiDatasource.dart';
+import 'package:pickup/app/modules/product/presenter/list/ListProductsPage.dart';
+import 'package:pickup/app/modules/login/presenter/LoginPage.dart';
 
 class AppModule extends Module {
   @override
@@ -14,5 +16,8 @@ class AppModule extends Module {
   ];
 
   @override
-  final List<ModularRoute> routes = [];
+  final List<ModularRoute> routes = [
+    ChildRoute('/', child: (_, args) => LoginPage()),
+    ChildRoute('/products', child: (_, args) => ListProductsPage()),
+  ];
 }
