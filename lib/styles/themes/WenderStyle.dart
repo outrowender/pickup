@@ -43,62 +43,62 @@ abstract class WenderPalette {
 abstract class WenderStyles {
   static ThemeData materialTheme = ThemeData(
     // Define the default brightness and colors.
-    brightness: Brightness.dark,
-    primaryColor: WenderPalette.purple,
-    accentColor: WenderPalette.pink,
-    backgroundColor: WenderPalette.background,
+    brightness: Brightness.light,
+    //primaryColor: WenderPalette.purple,
+    //accentColor: WenderPalette.pink,
+    //backgroundColor: WenderPalette.background,
     appBarTheme: AppBarTheme(
-      brightness: Brightness.dark,
-      color: WenderPalette.selection,      
+      brightness: Brightness.light,
+      //color: WenderPalette.selection,      
       iconTheme: IconThemeData(
-        color: WenderPalette.foreground,
+        //color: WenderPalette.foreground,
       ),
       actionsIconTheme: IconThemeData(
-        color: WenderPalette.foreground,
+        //color: WenderPalette.foreground,
       ),
     ),
 
     buttonTheme: ButtonThemeData(
-      buttonColor: WenderPalette.purple,
+      //buttonColor: WenderPalette.purple,
       textTheme: ButtonTextTheme.primary,
     ),
 
     inputDecorationTheme: InputDecorationTheme(
       labelStyle: TextStyle(
-        color: WenderPalette.foreground,
+        //color: WenderPalette.foreground,
       ),
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: WenderPalette.currentLine,
+          //color: WenderPalette.currentLine,
         ),
       ),
       errorBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: WenderPalette.red,
+          //color: WenderPalette.red,
         ),
       ),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: WenderPalette.purple,
+          //color: WenderPalette.purple,
         ),
       ),
     ),
 
     tabBarTheme: TabBarTheme(
-      labelColor: WenderPalette.foreground,
+      //labelColor: WenderPalette.foreground,
     ),
 
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: WenderPalette.purple,
+      //backgroundColor: WenderPalette.purple,
     ),
 
     snackBarTheme: SnackBarThemeData(
-      actionTextColor: WenderPalette.purple,
-      backgroundColor: WenderPalette.foreground,
+      //actionTextColor: WenderPalette.purple,
+      //backgroundColor: WenderPalette.foreground,
     ),
 
     bottomAppBarTheme: BottomAppBarTheme(
-      color: WenderPalette.selection,
+      //color: WenderPalette.selection,
     ),
 
     textTheme: TextTheme(
