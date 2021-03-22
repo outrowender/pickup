@@ -5,7 +5,7 @@ import 'package:pickup/app/modules/product/domain/usecases/listProducts/ListAllP
 import 'package:pickup/app/modules/product/external/datasource/WebApiProductDatasource.dart';
 import 'package:pickup/app/modules/product/presenter/list/ListProductsBloc.dart';
 import 'package:pickup/app/modules/product/presenter/list/ListProductsPage.dart';
-import 'package:pickup/app/modules/login/presenter/LoginPage.dart';
+import 'package:pickup/app/modules/login/presenter/LoginModal.dart';
 
 class AppModule extends Module {
   @override
@@ -19,7 +19,8 @@ class AppModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute('/', child: (_, args) => LoginPage()),
+    ChildRoute('/', child: (_, args) => LoginModal()),
+    //ChildRoute('/login', child: (_, args) => Loginpage()),
     ChildRoute('/products', child: (_, args) => ListProductsPage()),
   ];
 }
