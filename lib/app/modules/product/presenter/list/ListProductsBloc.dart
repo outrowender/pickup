@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:pickup/app/modules/product/domain/usecases/listProducts/ListAllProducts.dart';
+import 'package:pickup/app/modules/product/domain/usecases/listProducts/ListAllProductsUsecase.dart';
 import 'package:pickup/app/modules/product/presenter/list/states/ProductListState.dart';
 
-class ListProductsBloc extends Bloc<void, ProductListState> {
-  final ListAllProducts usecase;
+class ListProductsBloc extends Bloc<void, ProductListState> { //bloc are the state manager
+  final ListAllProductsUsecase usecase;
 
   ListProductsBloc(this.usecase)
       : super(ListStartState()); //initial state of bloc

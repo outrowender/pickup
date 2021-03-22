@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pickup/app/modules/product/data/repositories/ProductRepository.dart';
-import 'package:pickup/app/modules/product/domain/usecases/listProducts/ListAllProducts.dart';
+import 'package:pickup/app/modules/product/domain/usecases/listProducts/ListAllProductsUsecase.dart';
 import 'package:pickup/app/modules/product/external/datasource/WebApiDatasource.dart';
 import 'package:pickup/app/modules/product/presenter/list/ListProductsBloc.dart';
 import 'package:pickup/app/modules/product/presenter/list/ListProductsPage.dart';
@@ -13,7 +13,7 @@ class AppModule extends Module {
     Bind((i) => Dio()),
     Bind((i) => WebApiDatasource(i())),
     Bind((i) => ProductRepository(i())),
-    Bind((i) => ListAllProducts(i())),
+    Bind((i) => ListAllProductsUsecase(i())),
     Bind((i) => ListProductsBloc(i()))
   ];
 

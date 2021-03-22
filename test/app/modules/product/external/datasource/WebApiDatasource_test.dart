@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:pickup/app/modules/product/data/factories/ProductFactory.dart';
-import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
+import 'package:pickup/app/modules/product/domain/errors/ProductErrors.dart';
 import 'package:pickup/app/modules/product/external/datasource/WebApiDatasource.dart';
 
 class DioMock extends Mock implements Dio {}

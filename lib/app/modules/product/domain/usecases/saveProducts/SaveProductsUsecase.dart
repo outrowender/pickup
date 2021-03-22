@@ -1,10 +1,10 @@
 import 'package:pickup/types/Either.dart';
 import 'package:pickup/app/modules/product/domain/repositories/IProductRepository.dart';
 import 'package:pickup/app/modules/product/domain/entities/Product.dart';
-import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
-import 'ISaveProducts.dart';
+import 'package:pickup/app/modules/product/domain/errors/ProductErrors.dart';
+import 'ISaveProductsUsecase.dart';
 
-class SaveProducts implements ISaveProducts {
+class SaveProducts implements ISaveProductsUsecase {
   late final IProductRepository repository;
 
   SaveProducts(this.repository);

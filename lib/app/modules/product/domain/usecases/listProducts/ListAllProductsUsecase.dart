@@ -1,14 +1,14 @@
 import 'package:pickup/types/Either.dart';
 import 'package:pickup/app/modules/product/domain/entities/Product.dart';
-import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
+import 'package:pickup/app/modules/product/domain/errors/ProductErrors.dart';
 import 'package:pickup/app/modules/product/domain/repositories/IProductRepository.dart';
-import 'IListAllProducts.dart';
+import 'IListAllProductsUsecase.dart';
 
 
-class ListAllProducts implements IListAllProducts { //TODO: add "usecase" word in this name
+class ListAllProductsUsecase implements IListAllProductsUsecase {
   late final IProductRepository repository;
 
-  ListAllProducts(this.repository);
+  ListAllProductsUsecase(this.repository);
 
   @override
   Future<Either<ListProductsFailure, List<Product>>> call() {

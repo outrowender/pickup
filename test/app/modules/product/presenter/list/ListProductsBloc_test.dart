@@ -1,13 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:pickup/app/modules/product/domain/entities/Product.dart';
-import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
-import 'package:pickup/app/modules/product/domain/usecases/listProducts/ListAllProducts.dart';
+import 'package:pickup/app/modules/product/domain/errors/ProductErrors.dart';
+import 'package:pickup/app/modules/product/domain/usecases/listProducts/ListAllProductsUsecase.dart';
 import 'package:pickup/app/modules/product/presenter/list/ListProductsBloc.dart';
 import 'package:pickup/app/modules/product/presenter/list/states/ProductListState.dart';
 import 'package:pickup/types/Either.dart';
 
-class ListAllProductsMock extends Mock implements ListAllProducts {}
+class ListAllProductsMock extends Mock implements ListAllProductsUsecase {}
 
 main() {
   final usecase = ListAllProductsMock();

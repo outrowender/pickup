@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pickup/app/modules/product/domain/entities/Product.dart';
-import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
+import 'package:pickup/app/modules/product/domain/errors/ProductErrors.dart';
 import 'package:pickup/types/Either.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:pickup/app/modules/product/domain/repositories/IProductRepository.dart';
-import 'package:pickup/app/modules/product/domain/usecases/showProduct/ShowProduct.dart';
+import 'package:pickup/app/modules/product/domain/usecases/showProduct/ShowProductUsecase.dart';
 
 class ProductRepositoryMock extends Mock implements IProductRepository {}
 

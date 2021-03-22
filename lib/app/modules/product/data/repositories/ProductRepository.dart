@@ -1,5 +1,5 @@
 import 'package:pickup/app/modules/product/data/datasources/IProductDatasource.dart';
-import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
+import 'package:pickup/app/modules/product/domain/errors/ProductErrors.dart';
 import 'package:pickup/app/modules/product/domain/entities/Product.dart';
 import 'package:pickup/app/modules/product/domain/repositories/IProductRepository.dart';
 import 'package:pickup/types/Either.dart';

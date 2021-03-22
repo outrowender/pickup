@@ -1,6 +1,6 @@
 import 'package:pickup/app/modules/product/data/factories/ProductFactory.dart';
-import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
-import 'package:pickup/app/modules/product/domain/usecases/saveProducts/SaveProducts.dart';
+import 'package:pickup/app/modules/product/domain/errors/ProductErrors.dart';
+import 'package:pickup/app/modules/product/domain/usecases/saveProducts/SaveProductsUsecase.dart';
 import 'package:pickup/types/Either.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';

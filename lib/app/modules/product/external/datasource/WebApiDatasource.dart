@@ -2,7 +2,7 @@ import 'package:pickup/app/modules/product/data/datasources/IProductDatasource.d
 import 'package:pickup/app/modules/product/data/models/ProductModel.dart';
 import 'package:dio/dio.dart';
 import 'package:pickup/app/modules/product/domain/entities/Product.dart';
-import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
+import 'package:pickup/app/modules/product/domain/errors/ProductErrors.dart';
 import 'package:pickup/config/environment.dart';
 
 class WebApiDatasource implements IProductDatasource {
@@ -13,7 +13,7 @@ class WebApiDatasource implements IProductDatasource {
   Future<ProductModel> getProduct(int id) async {
     if (id < 1) throw ProductDatasourceFailure(); //TODO: some nice validators
 
-    final response = await dio.get('$host/products/$id');//TODO: convert dio to a service
+    final response = await dio.get('$host/products/$id');//TODO: convert dio to a service for better testing
 
     if (response.statusCode == 200) {
       final data = (response.data as ProductModel);

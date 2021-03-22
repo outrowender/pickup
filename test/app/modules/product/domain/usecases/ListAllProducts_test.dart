@@ -1,16 +1,16 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pickup/app/modules/product/domain/usecases/listProducts/ListAllProducts.dart';
+import 'package:pickup/app/modules/product/domain/usecases/listProducts/ListAllProductsUsecase.dart';
 import 'package:pickup/types/Either.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:pickup/app/modules/product/domain/entities/Product.dart';
-import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
+import 'package:pickup/app/modules/product/domain/errors/ProductErrors.dart';
 import 'package:pickup/app/modules/product/domain/repositories/IProductRepository.dart';
 
 class ProductRepositoryMock extends Mock implements IProductRepository {}
 
 main() {
   final repository = ProductRepositoryMock();
-  final usecase = ListAllProducts(repository);
+  final usecase = ListAllProductsUsecase(repository);
 
   test('Should return a list of products', () async {
     //mocktail will create fake result of these calls

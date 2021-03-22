@@ -3,7 +3,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:pickup/app/modules/product/data/datasources/IProductDatasource.dart';
 import 'package:pickup/app/modules/product/data/models/ProductModel.dart';
 import 'package:pickup/app/modules/product/data/repositories/ProductRepository.dart';
-import 'package:pickup/app/modules/product/domain/errors/Errors.dart';
+import 'package:pickup/app/modules/product/domain/errors/ProductErrors.dart';
 
 class ProductDatasourceMock extends Mock implements IProductDatasource {}
 
