@@ -1,7 +1,5 @@
 typedef Callback<T> = void Function(T value);
 
-///   [Left] is used for "failure".
-///   [Right] is used for "success".
 abstract class Either<L, R> {
   Either() {
     if (!isLeft && !isRight)
