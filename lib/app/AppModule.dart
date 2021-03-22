@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:pickup/app/modules/login/presenter/LoginPage.dart';
 import 'package:pickup/app/modules/product/data/repositories/ProductRepository.dart';
 import 'package:pickup/app/modules/product/domain/usecases/listProducts/ListAllProductsUsecase.dart';
 import 'package:pickup/app/modules/product/external/datasource/WebApiProductDatasource.dart';
@@ -20,7 +21,7 @@ class AppModule extends Module {
   @override
   final List<ModularRoute> routes = [
     ChildRoute('/', child: (_, args) => LoginModal()),
-    //ChildRoute('/login', child: (_, args) => Loginpage()),
+    ChildRoute('/login', child: (_, args) => LoginPage()),
     ChildRoute('/products', child: (_, args) => ListProductsPage()),
   ];
 }
