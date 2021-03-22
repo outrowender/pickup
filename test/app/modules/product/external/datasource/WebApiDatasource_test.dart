@@ -5,13 +5,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:pickup/app/modules/product/data/factories/ProductFactory.dart';
 import 'package:pickup/app/modules/product/domain/errors/ProductErrors.dart';
-import 'package:pickup/app/modules/product/external/datasource/WebApiDatasource.dart';
+import 'package:pickup/app/modules/product/external/datasource/WebApiProductDatasource.dart';
 
 class DioMock extends Mock implements Dio {}
 
 main() {
   final dio = DioMock();
-  final datasource = WebApiDatasource(dio);
+  final datasource = WebApiProductDatasource(dio);
   final productFactory = ProductFactory();
   test('should return a list of products from server', () async {
     

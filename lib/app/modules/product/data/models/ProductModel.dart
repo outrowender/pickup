@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:pickup/app/modules/product/domain/entities/Product.dart';
 
 class ProductModel extends Product {
-  late int id;
-  late String name;
-  late String ean;
-  late String sku;
+  final int id;
+  final String name;
+  final String ean;
+  final String sku;
 
   ProductModel({
     required this.id,
@@ -14,6 +14,20 @@ class ProductModel extends Product {
     required this.ean,
     required this.sku,
   }) : super(id: id, name: name, ean: ean, sku: sku);
+
+  ProductModel copyWith({
+    int? id,
+    String? name,
+    String? ean,
+    String? sku,
+  }) {
+    return ProductModel(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      ean: ean ?? this.ean,
+      sku: sku ?? this.sku,
+    );
+  }
 
   Map<String, dynamic> toMap() {
     return {
@@ -26,10 +40,10 @@ class ProductModel extends Product {
 
   factory ProductModel.fromMap(Map<String, dynamic> map) {
     return ProductModel(
-      id: map['id'] ?? 0,
-      name: map['name'] ?? '',
-      ean: map['ean'] ?? '',
-      sku: map['sku'] ?? '',
+      id: map['id'],
+      name: map['name'],
+      ean: map['ean'],
+      sku: map['sku'],
     );
   }
 
@@ -44,7 +58,6 @@ class ProductModel extends Product {
   }
 
   @override
-  //you can override a operator in Dart!
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 

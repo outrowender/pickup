@@ -5,9 +5,9 @@ import 'package:pickup/app/modules/product/domain/entities/Product.dart';
 import 'package:pickup/app/modules/product/domain/errors/ProductErrors.dart';
 import 'package:pickup/config/environment.dart';
 
-class WebApiDatasource implements IProductDatasource {
+class WebApiProductDatasource implements IProductDatasource {
   late final Dio dio;
-  WebApiDatasource(this.dio);
+  WebApiProductDatasource(this.dio);
 
   @override
   Future<ProductModel> getProduct(int id) async {
